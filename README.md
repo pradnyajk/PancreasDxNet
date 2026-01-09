@@ -7,7 +7,7 @@ Considering the importance and prevalence of pancreatic cancer worldwide, we tra
 * python = 3.12 
 * numpy
 * pandas
-* tensorflow= 2.18.0
+* tensorflow = 2.18.0
 * keras = 3.6.0
 * scikit-learn
 * scipy
