@@ -1,4 +1,4 @@
-# Pancreatic_cancer_detection
+# PancreasDxNet
 Pancreatic ductal adenocarcinoma (PDAC) is a highly aggressive malignancy with the five-year survival rate of only 13% largely due to late-stage diagnosis. Accurate and early detection is critical for improving survival outcomes. 
 
 Considering the importance and prevalence of pancreatic cancer worldwide, we trained an effective CNN-based multiclass classification model to classify computed tomography (CT) scan images of pancreas into three classes such as pancreatic cancer, pancreatitis and normal pancreas. The ResNet50-based CNN model achieved highest average accuracy of 99.26% and 99.16% on the validation and additional test set. 
