@@ -17,6 +17,7 @@ PancreasDxNet (Pancreatic Diagnosis Network) is a deep convolutional neural netw
 * opencv-python
 
 ## Repository Structure
+````
 PancreasDxNet/
 ├── app.py                  # Streamlit application
 ├── requirements.txt        # Dependencies
@@ -28,7 +29,7 @@ PancreasDxNet/
 ├── prediction_pc.py        # Script-based inference (legacy)
 ├── Images/                 # Sample/test images
 └── README.md
-
+````
 ---
 
 ## Usage
