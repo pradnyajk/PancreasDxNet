@@ -1,11 +1,13 @@
 # PancreasDxNet
-Pancreatic ductal adenocarcinoma (PDAC) is a highly aggressive malignancy with the five-year survival rate of only 13% largely due to late-stage diagnosis. Accurate and early detection is critical for improving survival outcomes. 
-Considering the importance and prevalence of pancreatic cancer worldwide, we trained an effective CNN-based multiclass classification model to classify computed tomography (CT) scan images of pancreas into three classes such as pancreatic cancer, pancreatitis and normal pancreas. The ResNet50-based CNN model achieved highest average accuracy of 99.26% and 99.16% on the validation and additional test set. 
+Pancreatic ductal adenocarcinoma (PDAC) is a highly aggressive malignancy with the five-year survival rate of only 13% largely due to late-stage diagnosis. Accurate and early detection is critical for improving survival outcomes.
+Considering the importance and prevalence of pancreatic cancer worldwide, we trained an effective CNN-based multiclass classification model to classify computed tomography (CT) scan images of pancreas into three classes such as pancreatic cancer, pancreatitis and normal pancreas. The ResNet50-based CNN model achieved highest average accuracy of 99.26% and 99.16% on the validation and additional test set.
 
 PancreasDxNet (Pancreatic Diagnosis Network) is a deep convolutional neural network designed for automated multi-class classification of pancreatic CT images into pancreatic cancer, pancreatitis, and normal pancreas.
 
+---
+
 ## Package requirements:
-* python = 3.12 
+* python = 3.12
 * numpy
 * pandas
 * tensorflow = 2.18.0
@@ -13,16 +15,27 @@ PancreasDxNet (Pancreatic Diagnosis Network) is a deep convolutional neural netw
 * scikit-learn
 * scipy
 * opencv-python
-    
-## Repository files:
-The files contained in this repository are as follows:
-* ``Readme file``: General information
-* ``Model``: Folder contains the trained model
-* ``Training_scripts``: Folder contains the code for training baseline and ResNet50 models
-* ``prediction_pc.py``: Main script to run prediction
-* ``Images``: Folder where images to be classified are to be saved (sample images are given for the reference).
 
-## Usage:
+## Repository Structure
+PancreasDxNet/
+├── app.py                  # Streamlit application
+├── requirements.txt        # Dependencies
+├── utils/
+│   └── model.py            # Preprocessing + prediction logic
+├── Model/
+│   └── generated_model.h5  # Trained CNN model
+├── Training_scripts/       # Model training scripts
+├── prediction_pc.py        # Script-based inference (legacy)
+├── Images/                 # Sample/test images
+└── README.md
+
+---
+
+## Usage
+
+This repository supports two modes of prediction:
+
+### Option 1: Script-Based Prediction
 
 > **_NOTE:_** Remember to activate the corresponding conda environment before running the script, if applicable.
 
@@ -44,7 +57,40 @@ The files contained in this repository are as follows:
 **Step 5**: Execute the script ``prediction_pc.py``.
 
     python prediction_pc.py
-            
+
 The script runs in the current directory.
 
 **Step 6**: Prediction results will be saved in `predictions.csv` which includes predicted output prediction class of pacreas CT images with probility of prediction.
+
+---
+
+### Option 2: Streamlit Web App
+
+Install all dependencies using:
+
+    pip install -r requirements.txt
+
+Run the interactive application:
+
+    streamlit run app.py
+
+Then open in browser:
+
+http://localhost:8501
+
+Steps:
+
+Upload a CT scan image
+Click Predict
+View predicted class and probabilities
+
+---
+
+## 📖 Citation
+
+If you use **PancreasDxNet** in your research, please cite:
+
+```bibtex
+
+```
+---
