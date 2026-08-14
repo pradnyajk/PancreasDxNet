@@ -42,27 +42,63 @@ This repository supports two modes of prediction:
 
 **Input**: Image file (image.jpg)
 
-**Output**: Prediction file
+**Output**: predictions.csv
 
 **Execution:**
 
-**Step 1**: Download this repository, extract zipped file and ensure that all the files are present in the same folder when running the script.
+**Step 1**: Install Git LFS
+Install and initialize Git LFS before cloning the repository.
+``git lfs install``.
 
-**Step 2**: Install Anaconda3-5.2 or above.
+**Step 2**: Clone the Repository
+Clone the repository using Git:
+`git clone https://github.com/pradnyajk/PancreasDxNet.git`
 
-**Step 3**: Before running these scripts, create a new conda environment and install the following packages using the pip command (pip install name_of_package = version)
-            Install or upgrade libraries mentioned above (python, numpy, pandas, tensorflow, keras, scikit-learn, scipy).
+Navigate to the repository:
+`cd PancreasDxNet`
 
-**Step 4**: Save the images to be predicted in "Images" folder
+Download the large model file managed by Git LFS:
 
-**Step 5**: Execute the script ``prediction_pc.py``.
+`git lfs pull`
 
-    python prediction_pc.py
+Verify that the trained model has been downloaded correctly:
 
-The script runs in the current directory.
+`ls -lh Model/generated_model.h5`
 
-**Step 6**: Prediction results will be saved in `predictions.csv` which includes predicted output prediction class of pacreas CT images with probility of prediction.
+The file should be approximately 92 MB.
 
+> **_NOTE:_** The Model/generated_model.h5 file must be the actual HDF5 model file. If the file contains text beginning with version https://git-lfs.github.com/spec/v1, the Git LFS model has not been downloaded correctly.
+
+**Step 3**: Set Up the Python Environment
+Install Anaconda3-5.2 or above.
+Before running these scripts, create a new conda environment and install the following packages using the pip command (pip install name_of_package = version)
+Install or upgrade libraries mentioned above (python, numpy, pandas, tensorflow, keras, scikit-learn, scipy).
+Install Anaconda3-5.2 or above
+``
+conda create -n pcnn python=3.12 
+conda activate pcnn
+pip install -r requirements.txt
+``
+**Step 4**: Prepare the Input Images
+Place the pancreatic CT images to be predicted in the Images folder.
+
+**Step 5**: Run the Prediction Script
+Execute:
+`python prediction_pc.py`
+
+The script automatically reads the images from the Images folder, preprocesses the images, loads the pretrained PancreasDxNet model, and generates predictions.
+
+**Step 6**: View the Prediction Results
+
+The prediction results are saved automatically as:
+
+predictions.csv
+
+The output file contains the predicted class and the corresponding prediction probabilities for each pancreatic CT image.
+The three predicted classes are:
+- Cancer
+- Normal
+- Pancreatitis
 ---
 
 ### Option 2: Streamlit Web App
