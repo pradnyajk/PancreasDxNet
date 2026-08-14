@@ -79,6 +79,7 @@ conda create -n pcnn python=3.12
 conda activate pcnn
 pip install -r requirements.txt
 ``
+
 **Step 4**: Prepare the Input Images
 Place the pancreatic CT images to be predicted in the Images folder.
 
