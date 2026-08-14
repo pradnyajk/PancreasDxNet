@@ -75,10 +75,11 @@ Before running these scripts, create a new conda environment and install the fol
 Install or upgrade libraries mentioned above (python, numpy, pandas, tensorflow, keras, scikit-learn, scipy).
 Install Anaconda3-5.2 or above
 
-`conda create -n pcnn python=3.12`
-`conda activate pcnn`
-`pip install -r requirements.txt`
-
+```
+conda create -n pcnn python=3.12
+conda activate pcnn`
+pip install -r requirements.txt
+```
 **Step 4**: Prepare the Input Images
 Place the pancreatic CT images to be predicted in the Images folder.
 
