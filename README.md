@@ -77,7 +77,7 @@ Install Anaconda3-5.2 or above
 
 ```
 conda create -n pcnn python=3.12
-conda activate pcnn`
+conda activate pcnn
 pip install -r requirements.txt
 ```
 **Step 4**: Prepare the Input Images
